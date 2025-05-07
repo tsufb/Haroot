@@ -1,0 +1,36 @@
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+
+st.title("פריסת חרוט קטום עם מידות")
+
+d_top = st.number_input("קוטר עליון", value=6.0)
+d_bottom = st.number_input("קוטר תחתון", value=10.0)
+height = st.number_input("גובה", value=12.0)
+
+if st.button("Generate"):
+    r1 = d_bottom / 2
+    r2 = d_top / 2
+    L = np.sqrt(height**2 + (r1 - r2)**2)
+    theta = 2 * np.pi * r1 / L
+    R_inner = L - (r1 - r2)
+    R_outer = L
+
+    angles = np.linspace(0, theta, 500)
+    x_outer = R_outer * np.cos(angles)
+    y_outer = R_outer * np.sin(angles)
+    x_inner = R_inner * np.cos(angles[::-1])
+    y_inner = R_inner * np.sin(angles[::-1])
+
+    fig, ax = plt.subplots(figsize=(6,6))
+    ax.plot(x_outer, y_outer, 'b')
+    ax.plot(x_inner, y_inner, 'r')
+    ax.fill(np.concatenate([x_outer, x_inner]), np.concatenate([y_outer, y_inner]), 'lightblue', alpha=0.5)
+    ax.plot([0, x_outer[0]], [0, y_outer[0]], 'k--')
+    ax.plot([0, x_outer[-1]], [0, y_outer[-1]], 'k--')
+    ax.text(0, R_outer + 1, f"קשת תחתונה: {2 * np.pi * r1:.2f}", ha='center')
+    ax.text(0, R_inner - 1, f"קשת עליונה: {2 * np.pi * r2:.2f}", ha='center')
+    ax.text(x_outer[0] * 0.5, y_outer[0] * 0.5, f"אורך קרן: {L:.2f}")
+    ax.set_aspect('equal')
+    ax.axis('off')
+    st.pyplot(fig)
