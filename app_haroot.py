@@ -9,8 +9,8 @@ st.title("פריסת חרוט קטום עם מידות")
 st.markdown("הכניסו את הקוטר העליון, הקוטר התחתון והגובה ולחצו על **Generate** להצגת הפריסה:")
 
 d_top = st.number_input("קוטר עליון בסנטימטרים", min_value=0.0, step=0.1, value=6.0)
-d_bottom = st.number_input("קוטר תחתון (בס"מ)", min_value=0.0, step=0.1, value=10.0)
-height = st.number_input("גובה החרוט (בס"מ)", min_value=0.0, step=0.1, value=12.0)
+d_bottom = st.number_input("קוטר תחתון בסנטימטרים", min_value=0.0, step=0.1, value=10.0)
+height = st.number_input("גובה החרוט בסנטימטרים", min_value=0.0, step=0.1, value=12.0)
 
 if st.button("Generate"):
     r1 = d_bottom / 2
@@ -32,9 +32,9 @@ if st.button("Generate"):
     ax.fill(np.concatenate([x_outer, x_inner]), np.concatenate([y_outer, y_inner]), 'lightblue', alpha=0.5)
     ax.plot([0, x_outer[0]], [0, y_outer[0]], 'k--')
     ax.plot([0, x_outer[-1]], [0, y_outer[-1]], 'k--')
-    ax.text(0, R_outer + 1, f"קשת תחתונה: {2 * np.pi * r1:.2f} ס"מ", ha='center')
-    ax.text(0, R_inner - 1, f"קשת עליונה: {2 * np.pi * r2:.2f} ס"מ", ha='center')
-    ax.text(x_outer[0] * 0.5, y_outer[0] * 0.5, f"אורך קרן: {L:.2f} ס"מ")
+    ax.text(0, R_outer + 1, f"קשת תחתונה: {2 * np.pi * r1:.2f} סמ", ha='center')
+    ax.text(0, R_inner - 1, f"קשת עליונה: {2 * np.pi * r2:.2f} סמ", ha='center')
+    ax.text(x_outer[0] * 0.5, y_outer[0] * 0.5, f"אורך קרן: {L:.2f} סמ")
     ax.set_aspect('equal')
     ax.axis('off')
     st.pyplot(fig)
