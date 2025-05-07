@@ -8,7 +8,7 @@ st.set_page_config(page_title="פריסת חרוט קטום", layout="centered")
 st.title("פריסת חרוט קטום עם מידות")
 st.markdown("הכניסו את הקוטר העליון, הקוטר התחתון והגובה ולחצו על **Generate** להצגת הפריסה:")
 
-d_top = st.number_input("קוטר עליון (בס"מ)", min_value=0.0, step=0.1, value=6.0)
+d_top = st.number_input("קוטר עליון בסנטימטרים", min_value=0.0, step=0.1, value=6.0)
 d_bottom = st.number_input("קוטר תחתון (בס"מ)", min_value=0.0, step=0.1, value=10.0)
 height = st.number_input("גובה החרוט (בס"מ)", min_value=0.0, step=0.1, value=12.0)
 
