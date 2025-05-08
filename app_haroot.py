@@ -38,3 +38,4 @@ if st.button("Generate"):
     ax.set_aspect('equal')
     ax.axis('off')
     st.pyplot(fig)
+    st.markdown(f"**הקוטר הפנימי (מהמרכז לקשת העליונה):** {2 * R_inner:.2f} ס\"מ")
