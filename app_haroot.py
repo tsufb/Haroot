@@ -39,24 +39,24 @@ if st.button("Generate"):
     ax.set_aspect('equal')
     ax.axis('off')
     # סימון נקודה O – מרכז המעגלים
-ax.plot(0, 0, 'ko')  # נקודה O
-ax.text(0, 0, 'O', fontsize=10, ha='right', va='top')
+    ax.plot(0, 0, 'ko')  # נקודה O
+    ax.text(0, 0, 'O', fontsize=10, ha='right', va='top')
 
-# סימון נקודה A – תחילת הקשת הפנימית
-ax.plot(x_inner[-1], y_inner[-1], 'ko')  # נקודה A
-ax.text(x_inner[-1], y_inner[-1], 'A', fontsize=10, ha='right', va='top')
+    # סימון נקודה A – תחילת הקשת הפנימית
+    ax.plot(x_inner[-1], y_inner[-1], 'ko')  # נקודה A
+    ax.text(x_inner[-1], y_inner[-1], 'A', fontsize=10, ha='right', va='top')
 
-# סימון נקודה B – סוף הקשת הפנימית
-ax.plot(x_inner[0], y_inner[0], 'ko')  # נקודה B
-ax.text(x_inner[0], y_inner[0], 'B', fontsize=10, ha='left', va='top')
+    # סימון נקודה B – סוף הקשת הפנימית
+    ax.plot(x_inner[0], y_inner[0], 'ko')  # נקודה B
+    ax.text(x_inner[0], y_inner[0], 'B', fontsize=10, ha='left', va='top')
 
-# סימון נקודה C – תחילת הקשת החיצונית
-ax.plot(x_outer[-1], y_outer[-1], 'ko')  # נקודה C
-ax.text(x_outer[-1], y_outer[-1], 'C', fontsize=10, ha='right', va='bottom')
+    # סימון נקודה C – תחילת הקשת החיצונית
+    ax.plot(x_outer[-1], y_outer[-1], 'ko')  # נקודה C
+    ax.text(x_outer[-1], y_outer[-1], 'C', fontsize=10, ha='right', va='bottom')
 
-# סימון נקודה D – סוף הקשת החיצונית
-ax.plot(x_outer[0], y_outer[0], 'ko')  # נקודה D
-ax.text(x_outer[0], y_outer[0], 'D', fontsize=10, ha='left', va='bottom')
+    # סימון נקודה D – סוף הקשת החיצונית
+    ax.plot(x_outer[0], y_outer[0], 'ko')  # נקודה D
+    ax.text(x_outer[0], y_outer[0], 'D', fontsize=10, ha='left', va='bottom')
     st.pyplot(fig)
     st.markdown(f"כדי לשרטט, סמנו שני מעגלים מאותה נקודת אמצע, לפי הקטרים הפנימי והחיצוני.")
     st.markdown(f"סמנו נקודה על המעגל הפנימי, ומדדו על הקשת את אורך הקשת בעזרת סגולי. סמנו שם נקודה.")
