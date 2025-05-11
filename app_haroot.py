@@ -53,10 +53,16 @@ if st.button("Generate"):
     # סימון נקודה C – תחילת הקשת החיצונית
     ax.plot(x_outer[-1], y_outer[-1], 'ko')  # נקודה C
     ax.text(x_outer[-1] - 0.2, y_outer[-1], 'C', fontsize=10, ha='right', va='bottom')
+    
 
     # סימון נקודה D – סוף הקשת החיצונית
     ax.plot(x_outer[0], y_outer[0], 'ko')  # נקודה D
     ax.text(x_outer[0] + 0.3, y_outer[0], 'D', fontsize=10, ha='left', va='bottom')
+    # גבולות הצירים לפי הרדיוס החיצוני
+    margin = 5
+    ax.set_xlim(-R_outer - margin, R_outer + margin)
+    ax.set_ylim(-R_outer - margin, R_outer + margin)
+    ax.set_aspect('equal', adjustable='box')  # חובה לשמירה על פרופורציות אמיתיות
     st.pyplot(fig)
     st.markdown(f"כדי לשרטט, סמנו שני מעגלים מאותה נקודת אמצע, לפי הקטרים הפנימי והחיצוני.")
     st.markdown(f"סמנו נקודה על המעגל הפנימי, ומדדו על הקשת את אורך הקשת בעזרת סגולי. סמנו שם נקודה.")
