@@ -40,7 +40,7 @@ if st.button("Generate"):
     ax.axis('off')
     # סימון נקודה O – מרכז המעגלים
     ax.plot(0, 0, 'ko')  # נקודה O
-    ax.text(0, 0, 'O', fontsize=10, ha='right', va='top')
+    ax.text(0, -0.3, 'O', fontsize=10, ha='right', va='top')
 
     # סימון נקודה A – תחילת הקשת הפנימית
     ax.plot(x_inner[-1], y_inner[-1], 'ko')  # נקודה A
