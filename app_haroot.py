@@ -35,7 +35,7 @@ if st.button("Generate"):
     ax.text(0, R_outer + 1, f"הנותחת תשק: {2 * np.pi * r1:.2f} מס", ha='center')
     ax.text(0, R_inner - 1, f"הנוילע תשק: {2 * np.pi * r2:.2f} מס", ha='center')
     ax.text(0, R_inner / 2, f"ימינפ סוידר: {R_inner:.2f} מס", ha='center', va='center', fontsize=10, color='purple')
-    ax.text(x_outer[0] * 0.5, y_outer[0] * 0.5, f"םיסוידר שרפה: {L:.2f} מס")
+    ax.text(x_outer[0] * 0.25, y_outer[0] * 0.5, f"םיסוידר שרפה: {L:.2f} מס")
     ax.set_aspect('equal')
     ax.axis('off')
     # סימון נקודה O – מרכז המעגלים
@@ -44,19 +44,19 @@ if st.button("Generate"):
 
     # סימון נקודה A – תחילת הקשת הפנימית
     ax.plot(x_inner[-1], y_inner[-1], 'ko')  # נקודה A
-    ax.text(x_inner[-1], y_inner[-1], 'A', fontsize=10, ha='right', va='top')
+    ax.text(x_inner[-1], y_inner[-1] - 0.3, 'A', fontsize=10, ha='right', va='top')
 
     # סימון נקודה B – סוף הקשת הפנימית
     ax.plot(x_inner[0], y_inner[0], 'ko')  # נקודה B
-    ax.text(x_inner[0], y_inner[0], 'B', fontsize=10, ha='left', va='top')
+    ax.text(x_inner[0] - 0.1, y_inner[0] - 0.3, 'B', fontsize=10, ha='left', va='top')
 
     # סימון נקודה C – תחילת הקשת החיצונית
     ax.plot(x_outer[-1], y_outer[-1], 'ko')  # נקודה C
-    ax.text(x_outer[-1], y_outer[-1], 'C', fontsize=10, ha='right', va='bottom')
+    ax.text(x_outer[-1] - 0.2, y_outer[-1], 'C', fontsize=10, ha='right', va='bottom')
 
     # סימון נקודה D – סוף הקשת החיצונית
     ax.plot(x_outer[0], y_outer[0], 'ko')  # נקודה D
-    ax.text(x_outer[0], y_outer[0], 'D', fontsize=10, ha='left', va='bottom')
+    ax.text(x_outer[0] + 0.3, y_outer[0], 'D', fontsize=10, ha='left', va='bottom')
     st.pyplot(fig)
     st.markdown(f"כדי לשרטט, סמנו שני מעגלים מאותה נקודת אמצע, לפי הקטרים הפנימי והחיצוני.")
     st.markdown(f"סמנו נקודה על המעגל הפנימי, ומדדו על הקשת את אורך הקשת בעזרת סגולי. סמנו שם נקודה.")
