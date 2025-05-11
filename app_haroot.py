@@ -35,7 +35,7 @@ if st.button("Generate"):
     ax.text(0, R_outer + 1, f"הנותחת תשק: {2 * np.pi * r1:.2f} מס", ha='center')
     ax.text(0, R_inner - 1, f"הנוילע תשק: {2 * np.pi * r2:.2f} מס", ha='center')
     ax.text(0, R_inner / 2, f"ימינפ סוידר: {R_inner:.2f} מס", ha='center', va='center', fontsize=10, color='purple')
-    ax.text(x_outer[0] * 0.25, y_outer[0] * 0.5, f"םיסוידר שרפה: {L:.2f} מס")
+    ax.text(x_outer[0] * 0.25, y_outer[0] * 0.5 + 0.2, f"םיסוידר שרפה: {L:.2f} מס")
     ax.set_aspect('equal')
     ax.axis('off')
     # סימון נקודה O – מרכז המעגלים
